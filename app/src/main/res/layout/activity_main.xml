@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/baseViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.extmkv.example.TouchableMotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/menu_scene">
+
+        <FrameLayout
+            android:id="@+id/menuIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingBottom="8dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="48dp"
+            android:translationZ="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu">
+
+            <FrameLayout
+                android:layout_width="@dimen/menu_indicator_outside_width"
+                android:layout_height="@dimen/menu_indicator_outside_height"
+                android:layout_gravity="center"
+                android:background="#F00"
+                tools:ignore="UselessParent" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:background="#FFF"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/lnrMenuOptionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+
+    </com.extmkv.example.TouchableMotionLayout>
+
+</FrameLayout>
